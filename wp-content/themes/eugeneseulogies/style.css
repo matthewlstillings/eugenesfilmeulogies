@@ -1,0 +1,1419 @@
+/*!
+Theme Name: Eugene\'s Eulogies
+Theme URI: http://underscores.me/
+Author: Matthew Stillings
+Author URI: http://underscores.me/
+Description: Website for Reviews
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: eugeneseulogies
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Eugene\'s Eulogies is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+#Custom Styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+#site-header img, .site,.site-header {
+	max-width: 100%;
+	width: 100%;
+	}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+/************ Custom Styles *************************/
+
+/************* Base *************/
+
+
+* {
+  font-family: 'Oswald', sans-serif;
+ 
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2 {
+  margin: 0 0 20px;
+}
+
+body {
+  background: black;
+  font-size: 16px !important;
+}
+
+a {
+  color: white;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.title-link {
+  font-family: 'Anton', sans-serif !important;
+}
+
+.title-link span {
+  font-family: 'Anton', sans-serif !important;
+  font-weight: 400;
+}
+
+
+/**** Pagination  *******/
+
+.posts-navigation {
+  max-width: 1110px;
+  width: 100%;
+  background: white !important;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.nav-previous a {
+  color: black !important;
+}
+
+.nav-next a {
+  color: black !important;
+}
+
+/************ Header and Nav *************/
+
+.navbar-nav>.active>a {
+  background: none !important;
+  color: #E9C87B;
+} 
+
+.navbar-text {
+  color: white !important;
+  margin-left: 22px;
+}
+
+.review__span {
+  color: #E9C87B;
+}
+
+.page-header {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-toggle {
+  border: none;
+}
+
+.fa-ellipsis-h {
+  font-size: 2rem;
+}
+
+.navbar-toggle:focus {
+  background: transparent !important;
+}
+
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar {
+  border: none;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+  transition: top .7s ease;
+}
+
+.navbar.move-up {
+  top: -50px;
+}
+
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+
+
+.nav>li>a:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.nav>li>a:focus {
+  color: rgba(255, 255, 255, 0.815);
+  outline: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.navbar-text {
+  color: white !important;
+  
+}
+
+.navbar-review {
+  text-decoration: underline #E9C87B;
+}
+
+.navbar-blog {
+  text-decoration: underline #86CB92;
+}
+
+.navbar-list {
+  text-decoration: underline #DE5B51;
+}
+
+/*********************** Navbar Media Queries ********************/
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    padding-right: 20px;
+  }
+}
+
+
+/************************ Searchbar and Page **************************/
+
+.search-field {
+  border: none;
+  box-shadow: 0;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, .3);
+  color: white !important;
+  outline: none;
+  padding: .5rem 1rem;
+  position: relative;
+  top: 5px;
+  font-weight: normal;
+  font-size: 1.5rem;
+  outline: none;
+  box-shadow: inset 0 0 0px 0px white;
+  transition: background-color .7s ease, box-shadow .1s ease-in;
+}
+
+.search-field:focus {
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 0px 1px white;
+}
+
+.search-field::placeholder {
+  color: white;
+}
+
+.search-submit {
+  background: transparent;
+  color: white;
+  border: none;
+  position: absolute;
+  right: -5px;
+  top: -4px;
+  font-size: 3rem;
+  z-index: 3;
+  outline: none;
+}
+
+.search-header {
+  padding: 10rem;
+  border-bottom: none;
+}
+
+.search-results-hero {
+  background: url('./assets/img/film-pics/jones.jpg') 50% 0% repeat fixed;
+  height: 65vh !important;
+}
+
+.search-title {
+  background: white;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .search-title {
+    padding: 1rem 1rem 1rem 10rem;
+    max-width: 730px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .search-field {
+    top: 9px;
+  }
+
+  .search-submit {
+    top: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-title {
+    max-width: 940px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-title {
+    max-width: 1135px;
+  }
+}  
+
+
+/************* Footer *************/
+
+.footer {
+	width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); 
+  color: white;
+	margin: 0;
+  padding: 20px 10px;
+  z-index: 10;
+  position: relative;
+  margin-top: -47.5px;
+}
+
+.footer__text {
+	font-size: .8rem;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.footer__text__name {
+  color: rgba(233, 200, 123);
+}
+
+.footer__container {
+  margin: auto;
+  max-width: 1155px;
+}
+
+/*************** HOMEPAGE STYLES *******************/
+
+
+
+.slick-dots {
+  position: absolute;
+  transform: rotate(270deg);
+  z-index: 20;
+  bottom: 75px;
+}
+
+.slick-dots li button:before
+    {
+        font-size: 10px;
+        color: white;
+        opacity: .4;
+    }
+
+.slick-active #slick-slide-control01:before {
+  color: #86CB92 !important;
+  opacity: 1;
+}
+
+.slick-active #slick-slide-control02:before {
+  color: #DE5B51 !important;
+  opacity: 1;
+}
+
+.slick-active #slick-slide-control00:before {
+  color: #E9C87B !important;
+  opacity: 1;
+}
+
+@media (min-width: 843px) {
+  .slick-dots {
+    top: 40%;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/******************************************** Home Page ********************************************/
+
+
+/************* Featured Reviews Carousel / Hero Sections *************/
+
+.content-area {
+  background: white;
+  display: flex;
+  padding: 0rem 0 6rem;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured__previews, .featured-posts {
+  background: black;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.featured-posts__carousel {
+  margin: 0 auto 0;
+  max-width: 1135px;
+  height: 100vh;
+}
+
+.slick-list {
+  height: 100vh !important;
+  margin: 0;
+}
+
+.slick-slide {
+  height: 100vh !important;
+  margin: 0;
+}
+
+.preview-thumbnail, .featured-post__slide {
+  background-position: center;
+  background-size: cover;
+  display: flex !important;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  outline: none;
+  padding: 0 !important;
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  max-width: 1135px;
+  margin: 0 auto 0;
+}
+
+.featured-post__slide {
+  justify-content: center; /** For Home Page Slides */
+}
+
+.preview-thumbnail {
+  justify-content: space-between; /*** For the archives/posts heros */
+}
+
+.preview-thumbnail__content, .featured-post__content { /** Styles shared Homepage and Static Archives */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1135px;
+  padding: 2rem;
+}
+
+.preview-thumbnail__content {
+  margin: 0 auto 100px;
+}
+
+.featured-post__content {
+  margin: 0 auto 160px;
+  opacity: 0;
+  transition: opacity .6s ease-in, margin .6s ease-in;
+}
+
+.slick-active .preview-thumbnail__content {
+  margin: 0 auto 100px;
+  opacity: 1;
+}
+
+.preview-thumbnail__title, .featured-post__title {
+  font-family: 'Anton', sans-serif;
+  font-size: 4rem; 
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 7.5px 5px 14px 5px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  text-shadow: .5px .5px .5px black;
+  text-decoration: underline;
+  width: 100%;
+  z-index: 10;
+}
+
+.featured-post__link {
+  opacity: .77;
+  transition: opacity .5s ease-in;
+} 
+
+.featured-post__link:hover {
+  opacity: 1;
+} 
+
+.featured-post__synopsis {
+  color: white;
+  font-weight: 400;
+  text-shadow: .5px .5px .5px black;
+  max-width: 600px;
+}
+
+.slick-prev {
+  display: none;
+}
+
+.slick-next {
+  right: 46%;
+  transform: rotate(90deg);
+  top: 90%;
+}
+
+.slick-next.slick-arrow:before {
+  font-size: 40px;
+  background: transparent;
+  color: white;
+}
+
+@media (min-width: 843px) {
+  .preview-thumbnail__content, .featured-post__content {
+    justify-content: baseline;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 6rem;
+  }
+
+  .featured-post__content {
+    opacity: 0;
+    transition: opacity 1s ease-in, margin 1s ease-in;
+  }
+  
+  .slick-active .featured-post__content {
+    margin: 0 auto 100px;
+    opacity: 1;
+  }
+  
+  .preview-thumbnail__title, .featured-post__title {
+    padding: 0 0 2rem;
+    text-align: left;
+    font-size: 5rem;
+  }
+  .featured-post__synopsis {
+    font-size: 2rem;
+  }
+}
+
+
+
+/************* Blog Pages *************/
+
+#page-down {
+  font-size: 8rem;
+  color: #E9C87B;
+  margin: 0 auto 2rem;
+  animation: 1s infinite alternate blink;
+  text-rendering: optimizeLegibility;
+  text-shadow: .5px .5px .5px black;
+}
+
+/****** Page Down animation *******/
+
+@keyframes blink {
+  from {opacity: 1}
+  to {opacity: .4}
+}
+
+.preview {
+  margin:  0 auto;
+  background: white;
+  padding-bottom: 6rem;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.preview__container {
+  max-width: 1135px;
+  margin: auto;
+  width: 100%;
+}
+
+.preview-content {
+  width: 100%;
+  min-height: 170px;
+  max-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  opacity: .9;
+  transition: opacity .5s ease-out;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.preview-feature {
+  position: relative;
+  min-height: 170px;
+  max-height: 170px;
+  margin: 5px auto;
+  box-sizing: border-box;
+  padding: 0;
+  width: 97%;
+  overflow: hidden;
+}
+
+.preview-synopsis {
+  padding: 5px 0 0 5px;
+  color: white;
+  font-size: 1.1rem;
+  margin: 0 0 0 1.4rem;
+}
+
+
+.preview-title {
+  letter-spacing: .05rem;
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  margin: 1rem 0;
+  max-width: 90%;
+  text-rendering: optimizeLegibility;
+  text-shadow: .5px .5px .5px black;
+  opacity: .77;
+  transition: opacity .2s ease-in;
+}
+
+.preview-title:hover {
+  opacity: 1;
+}
+
+.preview-description {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  max-width: 83%;
+  text-rendering: optimizeLegibility;
+  text-shadow: .5px .5px .5px black;
+}
+
+.posted-on {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.preview-content-image {
+  max-width: 100%;
+  bottom: 0px;
+  position: absolute;
+  z-index: -10;
+  filter: blur(1px);
+  transition: transform .9s ease, filter .9s ease;  
+}
+
+.preview-content-image.fade-up {
+  transform: scale(1.1, 1.1);
+  filter: blur(0.2px);
+}
+
+.synopsis-link {
+  text-transform: lowercase;
+}
+
+.synopsis-link:hover {
+  text-decoration: underline #E9C87B;
+}
+
+
+
+
+/************* Media Queries *************/
+
+@media only screen and (min-width: 740px) {
+  .preview__container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    max-width: 730px;
+  }
+
+  .preview-feature {
+    margin: 5px 5px;
+    max-width: 355px !important;
+    min-height: 220.66px !important;
+    max-height: 220.66px !important;
+  }
+  .preview-content {
+    min-height: 220.66px !important;
+    max-height: 220.66px !important;
+  }
+  .preview-title {
+    margin: 10px 0 15px;
+  }
+  .preview-description {
+    opacity: 0;
+    margin: 100px 0 0;
+    transition: opacity .9s ease, margin .9s ease;
+  }
+
+  .preview-description.fade-up {
+    opacity: 1;
+    margin: 0px 0 0;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  .preview__container {
+    max-width: 940px !important;
+  }
+  .preview-feature {
+    max-width: 408px !important;
+    min-height: 272.33px !important;
+    max-height: 272.33px !important;
+    margin-bottom: -6px;
+  } 
+  .preview-content {
+    min-height: 262.33px !important;
+    max-height: 262.33px !important;
+  }
+  .preview-synopsis {
+    margin: 3rem 0 0 2rem;
+  }
+  .preview-title {
+    font-size: 4rem;
+    margin: -1.5rem 0 2rem;
+  }
+  .preview-description {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .preview__container {
+    max-width: 1135px;
+    min-width: 1135px;
+    width: 100%;
+  }
+  .preview-feature {
+    margin-top: 1px;
+    max-width: 550px !important;
+    min-height: 306.66px !important;
+    max-height: 306.66px !important;
+    margin-bottom: 5px;
+  }
+  .preview-content {
+    min-height: 306.66px !important;
+    max-height: 306.66px !important;
+  }
+}
+
+
+
+
+/******************************************** Review Page/Blog Post/List Page Base Styles ********************************************/
+
+/************* Base Styles *************/
+
+
+.article-content-container {
+  background: white;
+  margin: auto;
+  padding: 2rem 1rem 10rem;
+  position: relative;
+}
+
+.article-content-wrapper {
+  margin: auto; 
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.article__date {
+   margin: auto;
+   padding: 2.5em;
+   
+}
+
+.article__container {
+  padding: 0;
+}
+
+.post-date {
+  margin-left: 5px;
+  font-size: 2rem;
+}
+
+@media (min-width: 843px) {
+  .article__container {
+    display: flex;
+    
+    padding: 0;
+  }
+
+  .article-content-wrapper {
+    flex-direction: row;
+  }
+
+  .article__content {
+    padding: 1rem 2.5rem;
+    margin: 0;
+  }
+
+  .article__content p {
+    margin: 0;
+  }
+
+  .article__date {
+    margin: 0 auto;
+    padding: 1.7em;
+ }
+
+}
+
+/*************** Archive Nav **********************/
+
+.page-nav {
+  width: 100%;
+}
+
+.nav-link a {
+  color: black;
+  padding: 1rem;
+}
+
+.nav-link {
+  width: 50%;
+}
+
+.nav-left {
+  float: left;
+  display: flex;
+  justify-content: baseline;
+}
+
+.nav-right {
+  float: right;
+  display: flex;
+  justify-content:flex-end; 
+}
+
+.nav-link-lrg {
+  color: black;
+  width: 10%;
+  margin: 0;
+  display: none;
+  padding: 1rem;
+}
+
+.nav-link-lrg a {
+  color: black;
+}
+
+.page-arrow {
+  font-size: 5rem;
+}
+
+@media (min-width: 1025px) {
+  .nav-link {
+    display: none;
+  }
+  .nav-link-lrg {
+    display: block;
+    text-align: center;
+  }
+
+  .content-area {
+    padding: 1.8rem 0 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav-link-lrg {
+    width: 30%;
+  }
+}
+
+/************* Review Body *************/
+
+
+
+.review__title-and-score__container {
+  display: flex;
+  text-align: center; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.review__title-and-year__container {
+  display: flex;
+  width: 100%; 
+}
+
+.review__title {
+  text-decoration: underline #E9C87B;
+  margin-bottom: 40px;
+}
+
+.review__year {
+  margin: 0px 0px 0px 10px;
+  color: gray;
+}
+
+.review__poster {
+  display: none;
+  width: 100%;
+  max-width: 250px;
+  max-height: 400px;
+  margin: auto;
+}
+
+.score {
+  color: #E9C87B; 
+  font-size: 40px;
+}
+
+.push {
+  display: none;
+  justify-content: center;
+  margin: 0;
+}
+
+.score-mobile {
+  font-size: 1.9rem;
+  text-align: center;
+  margin: -2rem auto 3rem;
+}
+
+.review__title-mobile {
+  text-align: center;
+}
+
+
+/******** Media Queries ********/
+
+@media (min-width: 843px) {
+  .review__title-and-score__container {
+    flex-direction: column;
+    position: absolute;
+    padding: 1rem;
+    margin: 20px auto 0;
+    max-width: 250px;
+  }
+
+  .review__title {
+    margin: 0 0 20px 40px;
+  }
+
+  .review__year {
+    margin: 0px 0px 0px 10px;
+  }
+  
+  .push {
+    display: flex;
+    min-width: 300px;
+    width: 30%;
+    max-width: 300px;
+	}
+	
+  .fixed {
+    position:fixed;
+    top: 0%;
+    z-index:99999;
+  }
+
+  .review__poster {
+    display: block;
+  }
+
+  .score {
+    margin:30px auto;
+  }
+
+  .review__content {
+    width: 60%;
+    border-left: 1px solid grey;
+  }
+
+  .score-mobile {
+    display: none;
+  }
+  
+  .review__title-mobile {
+    display: none;
+  }
+  
+  
+}
+
+/************* Blog Content *************/
+
+.blog-page-logo {
+  text-decoration: underline #86CB92;
+}
+
+.blog-page-logo__span {
+  color: #86CB92;
+}
+
+.blog-post__title {
+  color: #86CB92 !important;
+}
+
+
+
+.blog-wrapper {
+  max-width: 1135px;
+  margin: auto;
+}
+
+.blog__container {
+  margin: auto;
+}
+
+.blog__text {
+  margin: auto;
+}
+
+.blog__date {
+  color: #86CB92 !important;
+}
+
+/******** Media Queries ********/
+
+@media (min-width: 843px) {
+  .blog {
+    display: flex;
+  }
+}
+
+
+/******************************************** Review/Blog/List Home Page Base Styles ********************************************/
+
+
+
+/******************** Review Home Page ******************/
+
+.review-home__overlay{
+  padding: 10px;
+}
+
+#review-home__title {
+  margin-bottom: 10px;
+}
+
+
+.review-list__title {
+  text-decoration: underline #E9C87B;
+}
+
+.review-list {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.review__container {
+  background: #fff;
+  margin: auto;
+  padding: 10px;
+}
+
+
+
+
+/******************** Blog Home Page ******************/
+
+.blog-list__title {
+  text-decoration: underline #86CB92;
+}
+
+#blog-footer__text__name {
+  color: #86CB92;
+}
+
+
+
+
+
+
+/************************ Single Page Post  **************************/
+
+.single-post-main>.preview-feature>.preview-content>.preview-content-image {
+  display: none;
+}
+
+
+/******** No Results Page ***************/
+.no-results {
+  background: white;
+  height: 28rem;
+  padding: 2rem;
+}
+
+.no-page-content {
+  max-width: 1135px;
+  margin: auto;
+}
+
+
+/******** 404 Page ***************/
+.page-not-found-content {
+  padding-top: 10rem;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.page-not-found-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-not-found-content a {
+  color: black;
+}

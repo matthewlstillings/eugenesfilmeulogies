@@ -1,0 +1,25 @@
+//BootStrap 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+
+//Changes
+$bg-color: rgb(13, 90, 13);
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.jumbotron {
+    background: $bg-color;
+}
+
+.navbar-nav {
+    
+}
+
+.nav-item {
+    font-size: 13px;
+}

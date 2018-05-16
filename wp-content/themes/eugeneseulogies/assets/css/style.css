@@ -1,0 +1,625 @@
+/************* Base *************/
+
+
+* {
+  font-family: 'Oswald', sans-serif;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2 {
+  margin: 0 0 20px;
+}
+
+body {
+  background: black;
+  font-size: 16px !important;
+}
+
+.active a {
+  background: white !important;
+  color: black !important;
+}
+
+
+/************ Header and Nav *************/
+
+
+.logo__span {
+  color: #E9C87B;
+}
+
+.navbar-text {
+  color: white !important;
+  margin-left: 12px;
+}
+
+.page-header {
+  margin-bottom: 0;
+}
+
+.navbar-inverse {
+  background: #0b0c10 !important;
+  
+}
+
+.navbar-text {
+  color: white !important;
+  text-decoration: underline #E9C87B;
+}
+
+/************* Footer *************/
+
+.footer {
+  background: #0B0C10;
+  color: white;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+.footer__text {
+  margin: auto;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.footer__text__name {
+  color: rgba(233, 200, 123);
+}
+
+.footer__container {
+  margin: auto;
+  max-width: 1155px;
+}
+
+.navbar-inverse {
+  position: relative;
+  top: 50px;
+}
+/************ Jumbotron Styles ************/
+
+.featured-review {
+  background:
+            
+            url('assets/img/film-pics/annil.jpg');
+}
+
+.review-hero {
+  background: 
+            
+            url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/annil.jpg');
+}
+
+.blog-hero {
+  background:
+            url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/onepunch.jpg');  
+}
+
+.review-home-hero {
+  background:
+            url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/hitch.jpg');
+}
+
+.blog-home-hero {
+  background:
+            url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/theory.jpg');
+}
+
+.jumbotron {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  justify-content: center;
+  margin:0 auto;
+  padding: 40px 0;
+  position: relative;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  min-height: 350px;
+}
+
+
+/****** Jumbotron Media Queries ******/
+
+@media (min-width: 843px) {
+  
+
+  .featured-review {
+    background: 
+      linear-gradient(to left, black, black, transparent 20%),
+      linear-gradient(to right, black, black, transparent 20%),
+      url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/annil.jpg') 50% 0% no-repeat fixed;
+  }
+  
+  .review-hero {
+    background: 
+      linear-gradient(to left, black, black, transparent 20%),
+      linear-gradient(to right, black, black, transparent 20%),
+      url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/annil.jpg') 50% 0% no-repeat fixed;
+  }
+  
+  .blog-hero {
+    background: 
+      linear-gradient(to left, black, black, transparent 30%),
+      linear-gradient(to right, black, black, transparent 30%),
+      url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/onepunch.jpg') 50% 0% no-repeat fixed;  
+  }
+
+  .review-home-hero {
+    background: 
+      linear-gradient(to left, black, black, transparent 30%),
+      linear-gradient(to right, black, black, transparent 30%),
+      url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/hitch.jpg') 50% 0% no-repeat fixed;
+  }
+
+  .blog-home-hero {
+    background:
+      linear-gradient(to left, black, black, transparent 30%),
+      linear-gradient(to right, black, black, transparent 30%),
+      url('/wp-content/themes/eugeneseulogies/assets/img/film-pics/theory.jpg') 50% 0% no-repeat fixed;
+  }
+  .jumbotron {
+    min-height: 700px;
+    background-size: cover;
+  }
+}
+
+/******************************************** Home Page ********************************************/
+
+/************* Featured Review *************/
+
+.jumbotron__overlay {
+  background-color: rgba(0,0,0,0.4);;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px 25px;
+  vertical-align: middle;
+  width: 100%; 
+}
+
+
+.jumbotron__title {
+  color: #E9C87B !important;
+  text-decoration: underline;
+}
+
+.jumbotron__synopsis {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.jumbotron__overlay__content {
+  max-width: 600px !important;
+  margin: auto;
+}
+
+/************* Featured Reviews Carousel *************/
+
+.featured__reviews {
+  background: #f1f2f7;
+  padding: 1rem 0 7rem;
+  text-align: center;
+}
+
+.featured__reviews__title {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: underline #E9C87B;
+  text-transform: lowercase;
+}
+
+.featured__reviews__carousel {
+  margin: auto;
+  width: 100%;
+}
+
+.review-thumbnail {
+  border-radius: 50% !important;
+  cursor: -webkit-grab;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 233.33px;
+  
+  max-width: 375px;
+  outline: none;
+  padding: 0 !important;
+  position: relative;
+  text-align: center;
+  width: 100%; 
+}
+
+.review-thumbnail__image {
+  min-width: 100%;
+  min-height: 233.33px;
+  width: 100%;
+}
+
+.review-thumbnail__title {
+  background: rgba(233, 200, 123, .7);
+  padding: 7.5px 5px 14px 5px;
+  position: absolute;
+  top: 150px;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  z-index: 10;
+}
+
+
+/************* Feature-Blog-List-Review Cards *************/
+
+.preview {
+  background: white;
+  margin:  0 auto;
+  padding: 40px 0px 10px;
+}
+
+.preview__container {
+  max-width: 1135px;
+  margin: auto;
+}
+
+.preview-image__container {
+  position: relative;
+}
+
+.preview-feature {
+  background: #f1f2f7;
+  min-height: 463px;
+  max-width: 520px;
+  margin: 10px auto 35px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+}
+
+.preview__image {
+ min-height: 231.5px;
+ width: 100%;
+}
+
+.preview-title {
+  color: white;
+  padding: 7.5px 5px 12px 45px;
+  position: absolute;
+  margin: -205px 0 0;
+  bottom: 72%;
+  text-transform: lowercase;
+  max-width: 520px;
+  width: 100%;
+  z-index: 10;
+}
+
+.blog__title {
+  background: rgba(134, 203, 146, .5);
+}
+
+.list__title {
+  background: rgba(64, 78, 124, .5);
+}
+
+.preview-description__container {
+  position: relative;
+  background: #f1f2f7;
+}
+
+.preview-list__title {
+  text-align: center;
+  margin: 20px auto 40px;
+  color: #0B0C10;
+}
+
+.preview-tag {
+  bottom: 93%;
+  color: white;
+  min-width: 125px;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 20%;
+}
+
+.blog-tag {
+  background: #86CB92;
+}
+
+.list-tag {
+  background: #DE5B51;
+}
+
+.review-tag {
+  background: #E9C87B;
+}
+
+.preview-description {
+  margin: 0;
+  padding: 30px;
+}
+
+
+
+/************* Media Queries *************/
+
+@media (min-width: 843px) {
+  .jumbotron {
+    background-size: cover;
+  }
+  .preview__container {
+    min-width: 0px;
+  }
+  .preview-feature {
+    display: flex;
+    margin-bottom: 75px;
+    max-width: none;
+    min-height: 0px;
+    max-height: 313px;
+  }
+  .preview-image__container {
+    width: 50%;
+    max-height: 313px;
+  }
+  .preview__image {
+    min-height: 235px;
+  }
+  .preview-description__container {
+    width: 50%;
+    max-height: 313px;
+  }
+  .preview-title {
+    padding-bottom: 10px;
+    max-width: 567.5px;
+    width: 100%;
+    z-index: 10;
+  }
+  .preview-tag {
+    bottom: -9.5%;
+    min-width: 40%;
+    right: 80.3%;
+  }
+}
+
+/******************************************** Review Page/Blog Post/List Page Base Styles ********************************************/
+
+/************* Base Styles *************/
+
+
+.article-content-container {
+  background: white;
+  margin: auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.article-content-wrapper {
+  margin: auto; 
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.article__date {
+   margin: auto;
+   padding: 2.5em;
+   
+}
+
+.post-date {
+  margin-left: 5px;
+  font-size: 2rem;
+}
+
+@media (min-width: 843px) {
+  .article__container {
+    display: flex;
+    
+    padding: 0;
+  }
+
+  .article-content-wrapper {
+    flex-direction: row;
+  }
+
+  .article__content {
+    padding: 1rem 2.5rem;
+  }
+
+  .article__date {
+    margin: 0 auto;
+    padding: 1.7em;
+ }
+
+}
+
+/************* Review Body *************/
+
+
+
+.review__title-and-score__container {
+  display: flex;
+  text-align: center; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.review__title-and-year__container {
+  display: flex;
+  
+  width: 100%; 
+}
+
+.review__title {
+  text-decoration: underline #E9C87B;
+  margin-bottom: 0;
+}
+
+.review__year {
+  margin: 0px 0px 0px 10px;
+  color: gray;
+}
+
+.review__poster {
+  display: none;
+  width: 100%;
+  max-width: 250px;
+  max-height: 400px;
+  margin: auto;
+}
+
+.score {
+  color: #E9C87B; 
+  font-size: 40px !important;
+}
+
+.push {
+  display: flex; 
+  justify-content: center;
+  margin: 0;
+}
+
+
+/******** Media Queries ********/
+
+@media (min-width: 843px) {
+  .review__title-and-score__container {
+    flex-direction: column;
+    position: absolute;
+    padding: 1rem;
+    margin: 20px auto 0;
+    max-width: 250px;
+  }
+
+  .review__title {
+    margin: 0 0 20px 40px;
+  }
+
+  .review__year {
+    margin: 0px 0px 0px 10px;
+  }
+  
+  .push {
+    min-width: 300px;
+    width: 30%;
+    max-width: 300px;
+  }
+
+  .fixed {
+    position:fixed;
+    top: 10%;
+    z-index:99999;
+  }
+
+  .review__poster {
+    display: block;
+  }
+
+  .score {
+    margin:30px auto;
+  }
+
+  .review__content {
+    width: 60%;
+    border-left: 1px solid grey;
+  }
+  
+}
+
+/************* Blog Content *************/
+
+.blog-page-logo {
+  text-decoration: underline #86CB92;
+}
+
+.blog-page-logo__span {
+  color: #86CB92;
+}
+
+.blog-post__title {
+  color: #86CB92 !important;
+}
+
+
+
+.blog-wrapper {
+  max-width: 1135px;
+  margin: auto;
+}
+
+.blog__container {
+  margin: auto;
+}
+
+.blog__text {
+  margin: auto;
+}
+
+.blog__date {
+  color: #86CB92 !important;
+}
+
+/******** Media Queries ********/
+
+@media (min-width: 843px) {
+  .blog {
+    display: flex;
+  }
+}
+
+
+/******************************************** Review/Blog/List Home Page Base Styles ********************************************/
+
+
+
+/******************** Review Home Page ******************/
+
+.review-home__overlay{
+  padding: 10px;
+}
+
+#review-home__title {
+  margin-bottom: 10px;
+}
+
+
+.review-list__title {
+  text-decoration: underline #E9C87B;
+}
+
+.review-list {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.review__container {
+  background: #fff;
+  margin: auto;
+  padding: 10px;
+}
+
+.review-preview__title {
+  background: rgba(233, 200, 123, .5);
+  text-transform: none;
+  padding-left: 50px;
+}
+
+
+/******************** Blog Home Page ******************/
+
+.blog-list__title {
+  text-decoration: underline #86CB92;
+}
+
+#blog-footer__text__name {
+  color: #86CB92;
+}
