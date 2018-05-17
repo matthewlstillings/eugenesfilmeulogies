@@ -6,9 +6,11 @@
  *
  * @package Eugene\'s_Eulogies
  */
-$review_synopsis = get_field('review_synopsis');
-$review_image = get_field('review_image');
-$review_poster = get_field('movie_poster');
+$post_synopsis = get_field('review_synopsis');
+$post_image = get_field('review_image');
+$post_poster = get_field('movie_poster');
+$film_director = get_field('film_director');
+$film_date = get_field('film_year');
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="preview-feature">
@@ -28,12 +30,14 @@ $review_poster = get_field('movie_poster');
 						the_title( '<h3 class="preview-title review-preview__title"><a class="title-link" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 				endif; 
 			?>
-			<?php eugeneseulogies_posted_on(); ?>
-			<img class="preview-content-image" src="<?php echo $review_image['url']; ?>" /> <!-- eugeneseulogies_post_thumbnail-->
-			<p class="preview-description"><?php echo $review_synopsis; ?><a class="synopsis-link" href='<?php the_permalink(); ?> ' rel="bookmark">  Continue</a></p>
+			<?php if (!empty($film_director)): ?> 
+				<h6 class="film-director-date"><?php echo $film_director ?> || <?php echo $film_date ?> </h6>
+			<?php endif; ?>
+			
+			<p class="preview-description"><?php echo $post_synopsis; ?></p>
 			
 		</div>
-		<img class="preview-content-image" src="<?php echo $review_image['url']; ?>" /> <!-- eugeneseulogies_post_thumbnail-->
+		<img class="preview-content-image" src="<?php echo $post_image['url']; ?>" /> <!-- eugeneseulogies_post_thumbnail-->
 		
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

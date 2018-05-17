@@ -415,6 +415,27 @@ a:hover {
   color: black !important;
 }
 
+.fa-chevron-right:hover {
+  animation: right-arrow-bounce .5s ease-in-out;
+}
+
+.fa-chevron-left:hover {
+  animation: left-arrow-bounce .5s ease-in-out;
+}
+
+@keyframes right-arrow-bounce {
+  0% {transform: translateX(0px)}
+  50% {transform: translateX(15px)}
+  100% {transform: translateX(0px)}
+}
+
+@keyframes left-arrow-bounce {
+  0% {transform: translateX(0px)}
+  50% {transform: translateX(-15px)}
+  100% {transform: translateX(0px)}
+}
+
+
 /************ Header and Nav *************/
 
 .navbar-nav>.active>a {
@@ -435,8 +456,6 @@ a:hover {
   margin: 0;
   padding: 0;
 }
-
-
 
 .navbar-collapse {
   border: none;
@@ -476,10 +495,14 @@ a:hover {
   flex-flow: wrap;
 }
 
-
+.nav>li>a {
+  color: rgba(255, 255, 255, .5);
+  transition: color .5s ease;
+}
 
 .nav>li>a:hover {
-  background: none;
+  color: rgba(255, 255, 255, 1);
+  background: transparent;
   text-decoration: underline;
 }
 
@@ -770,7 +793,7 @@ a:hover {
   text-transform: uppercase;
   color: white;
   font-weight: 400;
-  margin: 0;
+  margin: 7rem 0 0;
   padding: 7.5px 5px 14px 5px;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -925,6 +948,12 @@ a:hover {
   transition: opacity .2s ease-in;
 }
 
+.film-director-date {
+  margin: -.5rem 0 1rem;
+  text-rendering: optimizeLegibility;
+  text-shadow: .5px .5px .5px black;
+}
+
 .preview-title:hover {
   opacity: 1;
 }
@@ -992,6 +1021,12 @@ a:hover {
   .preview-title {
     margin: 10px 0 15px;
   }
+
+  .film-director-date {
+    margin: -1rem 0 1rem;
+    
+  }
+  
   .preview-description {
     opacity: 0;
     margin: 100px 0 0;
@@ -1240,12 +1275,12 @@ a:hover {
     flex-direction: column;
     position: absolute;
     padding: 1rem;
-    margin: 20px auto 0;
+    margin: 0 auto 0;
     max-width: 250px;
   }
 
   .review__title {
-    margin: 0 0 20px 40px;
+    margin: 0 auto 2rem;
   }
 
   .review__year {
@@ -1270,7 +1305,7 @@ a:hover {
   }
 
   .score {
-    margin:30px auto;
+    margin: auto;
   }
 
   .review__content {

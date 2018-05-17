@@ -15,7 +15,7 @@ get_header();
 			<h1 class="preview-thumbnail__title" style="color: #E9C87B;"><?php the_title(); ?></h1>
 		</div> 
 		<a class="scroll" href="#main"><i class="fas fa-chevron-down" id="page-down"></i></a>       
-    </div>
+    </div> <!-- Hero -->
 	<section class="article-content-container review" id="review">
         <div class="article__container container">
 			<main class="single-post-main" id="main">

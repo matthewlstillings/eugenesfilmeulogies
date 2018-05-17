@@ -162,7 +162,7 @@ if($(window).width() >= 829){
 //Review Page Sticky Side Bar
 
     $(document).ready(function () {  
-        var top = $('.review__title-and-score__container').offset().top - 40;
+        var top = $('.review__title-and-score__container').offset().top - 0;
         $(window).scroll(function (event) {
             var y = $(this).scrollTop();
             if (y >= top)

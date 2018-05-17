@@ -7,11 +7,12 @@
  * @package Eugene\'s_Eulogies
  */
 
- $review_synopsis = get_field('review_synopsis');
- $review_image = get_field('review_image');
- $review_poster = get_field('movie_poster');
- $review_score = get_field('film_score');
- $review_year = get_field('film_year');
+$review_score = get_field('film_score');
+$post_synopsis = get_field('review_synopsis');
+$post_image = get_field('review_image');
+$post_poster = get_field('movie_poster');
+$film_director = get_field('film_director');
+$film_date = get_field('film_year');
 ?>
 
 		
@@ -23,9 +24,11 @@
 					<div class="review__title-and-score__container">
 						<div class="review__title-and-year__container">
 						<?php the_title( '<h2 class="review__title" id="review-title">', '</h2>' );?>
-							<h5 class="review__year"><?php echo $review_year; ?></h5>
 						</div>
-						<img class="review__poster" src="<?php echo $review_poster['url']; ?>" />
+						<img class="review__poster" src="<?php echo $post_poster['url']; ?>" />
+						<?php if (!empty($film_director)): ?> 
+							<h5 class="film-director-date-single"><?php echo $film_director ?> || <?php echo $film_date ?> </h5>
+						<?php endif; ?>
 						<h4 class="score"><?php echo $review_score; ?>/100</h4>
 					</div>
 				</div>
@@ -59,10 +62,12 @@
 								the_title( '<h3 class="preview-title review-preview__title"><a class="title-link"  href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 						endif; 
 					?>
-					
-					<p class="preview-description"><?php echo $review_synopsis; ?></p>
+					<?php if (!empty($film_director)): ?> 
+						<h6 class="film-director-date"><?php echo $film_director ?> || <?php echo $film_date ?> </h6>
+					<?php endif; ?>
+					<p class="preview-description"><?php echo $post_synopsis; ?></p>
 				</div>
-				<img class="preview-content-image" src="<?php echo $review_image['url']; ?>" /> <!-- eugeneseulogies_post_thumbnail-->
+				<img class="preview-content-image" src="<?php echo $post_image['url']; ?>" /> <!-- eugeneseulogies_post_thumbnail-->
 			</div>
 		</article><!-- #post-preview-<?php the_ID(); ?> -->
 

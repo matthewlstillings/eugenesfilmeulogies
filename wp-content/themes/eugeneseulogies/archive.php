@@ -8,7 +8,7 @@
  */
 
 $term = get_queried_object();
-$review_home_image = get_field('review_hero', $term);
+$review_home_image = get_field('category_hero', $term);
 
 get_header();
 ?>	
@@ -19,7 +19,7 @@ get_header();
 			<h1 class="preview-thumbnail__title" style="color: #E9C87B;"><?php the_archive_title(); ?></h1>
 		</div>
 		<a class="scroll" href="#main"><i class="fas fa-chevron-down" id="page-down"></i></a>    
-    </div>
+    </div> <!-- Hero -->
 	<div id="primary" class="content-area">
 
 		<div class="nav-link-lrg nav-lrg-left"><?php previous_posts_link('<i class="fas fa-chevron-left page-arrow"></i>') ?></div> <!-- Right Page Nav for Big Screens -->
