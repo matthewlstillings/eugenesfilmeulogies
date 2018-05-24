@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area content-area-404">
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
@@ -18,9 +18,9 @@ get_header();
 
 				<div class="page-not-found-content">
 					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'eugeneseulogies' ); ?></h1>
+						<h1 class="page-title"><?php esc_html_e( 'Theses are not the droids you\'re looking for.', 'eugeneseulogies' ); ?></h1>
 					</header><!-- .page-header -->
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'eugeneseulogies' ); ?></p>
+					<p><?php esc_html_e( ' Lame I know, but try searching elsewhere.', 'eugeneseulogies' ); ?></p>
 
 					<?php
 					
@@ -29,7 +29,7 @@ get_header();
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'eugeneseulogies' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Categories', 'eugeneseulogies' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories( array(
@@ -45,7 +45,7 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$eugeneseulogies_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'eugeneseulogies' ), convert_smilies( ':)' ) ) . '</p>';
+					$eugeneseulogies_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'eugeneseulogies' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$eugeneseulogies_archive_content" );
 
 					

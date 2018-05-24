@@ -11,7 +11,7 @@ $(document).ready(function() {
         variableWidth: false,
         centerMode: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         vertical: true,
         verticalSwiping: true,
         dots: true,
@@ -37,9 +37,25 @@ $(document).ready(function() {
         return false;
     });
 
+
+    //Search Page Stop
+    $(".search-field").on("focus", function(){
+            $('html').css('overflow', 'hidden');
+            $('section').addClass('search-focus');
+            $('.preview-thumbnail').addClass('search-focus');
+            console.log('focus'); 
+    });
+
+    $(".search-field").on("focusout", function(){
+        $('html').css('overflow', 'visible');
+        $('section').removeClass('search-focus');
+        $('.preview-thumbnail').removeClass('search-focus');
+        console.log('unfocus');
+    });
+
     
     //Change Nav/Header/Footer/Title based on category
-    $('.logo__span').css("color", review) // Front Page Initial Color
+    $('.logo__span').css("color", review); // Front Page Initial Color
     
     if ($('body').hasClass('category-blogs')) {
         $('.logo__span').css("color", blog)
@@ -49,7 +65,7 @@ $(document).ready(function() {
         $('.preview-thumbnail__title').css("color", blog);
         $('.footer__text__name').css("color", blog);
         $('#page-down').css("color", blog);
-        //$('.title-link').css("color", blog);
+        
         //For blog post formatting
         $('.review__title').css("text-decoration", "underline #86CB92");
         $('.article__container').css({'justify-content': 'center'});
@@ -64,7 +80,7 @@ $(document).ready(function() {
         $('.menu-item-114').children().css("color", list);
         $('.footer__text__name').css("color", list);
         $('#page-down').css("color", list);
-        //$('.title-link').css("color", list);
+        
         //For blog post formatting
         $('.review__title').css("text-decoration", "underline #DE5B51");
         $('.article__container').css({'justify-content': 'center'});
@@ -75,7 +91,7 @@ $(document).ready(function() {
         $('.menu-item-76').children().css("color", review);
         $('.footer__text__name').css("color", review);
         $('#page-down').css("color", review);
-       // $('.title-link').css("color", review);
+      
     }
 
     //Preview Hovers
@@ -165,13 +181,19 @@ if($(window).width() >= 829){
         var top = $('.review__title-and-score__container').offset().top - 0;
         $(window).scroll(function (event) {
             var y = $(this).scrollTop();
-            if (y >= top)
+            if (y >= top) {
+                console.log('stuck');
                 $('.review__title-and-score__container').addClass('fixed');
-            else
+            }
+            else {
+                console.log('unstuck');
                 $('.review__title-and-score__container').removeClass('fixed');
+            }
         });
     });
 };
+
+
 
 
 

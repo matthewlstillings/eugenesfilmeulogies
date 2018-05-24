@@ -595,9 +595,6 @@ a:hover {
   padding: 1.5rem;
 }
 
-
-
-
 @media (min-width: 768px) {
   .search-title {
     padding: 1rem 1rem 1rem 10rem;
@@ -628,8 +625,24 @@ a:hover {
   }
 }  
 
+/********* Search Classes for Focus/Unfocus *************/
 
-/************* Footer *************/
+section {
+  filter: blur(0px) grayscale(0%);
+}
+
+.preview-thumbnail {
+  filter: blur(0px) grayscale(0%);
+}
+
+.search-focus {
+  filter: blur(2px) grayscale(90%);
+}
+
+
+
+
+/************************** Footer **************************/
 
 .footer {
 	width: 100%;
@@ -719,8 +732,13 @@ a:hover {
 .featured__previews, .featured-posts {
   background: black;
   text-align: center;
-  height: 100vh;
+  height: 99.8vh;
   margin: 0;
+}
+
+.featured-posts {
+  overflow: hidden;
+  
 }
 
 .featured-posts__carousel {
@@ -781,7 +799,7 @@ a:hover {
   transition: opacity .6s ease-in, margin .6s ease-in;
 }
 
-.slick-active .preview-thumbnail__content {
+.slick-active .featured-post__content {
   margin: 0 auto 100px;
   opacity: 1;
 }
@@ -1225,12 +1243,18 @@ a:hover {
 
 .review__title-and-year__container {
   display: flex;
+  flex-direction: column;
   width: 100%; 
 }
 
 .review__title {
   text-decoration: underline #E9C87B;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+}
+
+.post__subtitle {
+  text-align: center;
+  margin: -10px auto 5px;
 }
 
 .review__year {
@@ -1260,11 +1284,18 @@ a:hover {
 .score-mobile {
   font-size: 1.9rem;
   text-align: center;
-  margin: -2rem auto 3rem;
+  margin: 2rem auto 3rem;
 }
 
 .review__title-mobile {
   text-align: center;
+}
+
+.post__date {
+  text-align: center;
+  margin: 0px auto 40px;
+  font-size: 1rem;
+  opacity: .75;
 }
 
 
@@ -1277,10 +1308,23 @@ a:hover {
     padding: 1rem;
     margin: 0 auto 0;
     max-width: 250px;
+    -o-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
   }
 
   .review__title {
-    margin: 0 auto 2rem;
+    margin: 0px auto 2rem;
+  }
+
+  .post__subtitle, .post__date  {
+    text-align: right;
+    margin: -10px 11px 0px 0px;
+  }
+
+  .post__date {
+    margin-top: 5px;
   }
 
   .review__year {
@@ -1295,9 +1339,9 @@ a:hover {
 	}
 	
   .fixed {
-    position:fixed;
+    position: fixed;
     top: 0%;
-    z-index:99999;
+    z-index:4;
   }
 
   .review__poster {
@@ -1320,50 +1364,19 @@ a:hover {
   .review__title-mobile {
     display: none;
   }
-  
-  
-}
 
-/************* Blog Content *************/
-
-.blog-page-logo {
-  text-decoration: underline #86CB92;
-}
-
-.blog-page-logo__span {
-  color: #86CB92;
-}
-
-.blog-post__title {
-  color: #86CB92 !important;
-}
-
-
-
-.blog-wrapper {
-  max-width: 1135px;
-  margin: auto;
-}
-
-.blog__container {
-  margin: auto;
-}
-
-.blog__text {
-  margin: auto;
-}
-
-.blog__date {
-  color: #86CB92 !important;
-}
-
-/******** Media Queries ********/
-
-@media (min-width: 843px) {
-  .blog {
-    display: flex;
+  .post__subtitle--mobile {
+    display: none;
   }
+  
+  .post__date--mobile {
+    display: none;
+  }
+  
+  
 }
+
+
 
 
 /******************************************** Review/Blog/List Home Page Base Styles ********************************************/
@@ -1451,4 +1464,111 @@ a:hover {
 
 .page-not-found-content a {
   color: black;
+}
+
+.content-area-404 {
+  display: flex;
+  justify-content: center;
+}
+
+
+/******** List Styles ***************/
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 97%;
+  
+}
+
+.list-item__link-image-container {
+  width: 100%;
+}
+
+.list-item__link {
+  width: 100%;
+}
+
+.list-item__image {
+  background: transparent;
+  width: 100%;
+}
+
+
+.list-item__description-container {
+  width: 100%;
+}
+
+.list-item__number {
+  margin: 1.5rem auto;
+  color: rgba(222, 91, 81, .9);
+}
+
+.list-item__title, .list-item__description {
+  color: black;
+}
+
+.list-item__title {
+  margin-bottom: .5rem;
+}
+
+.list-item__director-and-year {
+  color: #8E8E8E;
+  margin-bottom: .5rem;
+}
+
+.list-item__description {
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  line-height: 1.8rem;
+}
+
+.list-item__year {
+  font-size: 1.3rem;  
+}
+
+/*** List Media Queries ****/
+
+@media (min-width: 541px) {
+  .list-item {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+
+  .list-item__link-image-container {
+    width: 30%;
+    margin-right: 2rem;
+  }
+
+  .list-item__image {
+    margin-top: 2rem;
+    
+  }
+  
+  .list-item__description-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 843px) {
+  
+  .list-item__title-container {
+    display: flex;
+    margin-bottom: .55rem;
+  }
+
+  .list-item__title {
+    margin: 0 1rem 0 0;
+  }
+  
+  .list-item__number {
+    font-size: 5rem;
+  }
+
+  .list-item__image {
+    margin-top: 2.4rem;
+  }
+ 
 }
